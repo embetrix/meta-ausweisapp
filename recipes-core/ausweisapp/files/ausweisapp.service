@@ -4,6 +4,15 @@ Conflicts=getty@tty1.service
 DefaultDependencies=no
 
 [Service]
+DynamicUser=yes
+User=ausweisapp
+Group=ausweisapp
+SupplementaryGroups=video input
+BindPaths=/var/ausweisapp:/var/lib/ausweisapp
+ReadWritePaths=/var/ausweisapp
+StateDirectory=ausweisapp
+RuntimeDirectory=ausweisapp
+RuntimeDirectoryMode=0750
 EnvironmentFile=/etc/AusweisApp/ausweisapp.env
 ExecStart=/usr/bin/AusweisApp --port 24727 --address 0.0.0.0 --no-logfile
 Restart=on-failure
