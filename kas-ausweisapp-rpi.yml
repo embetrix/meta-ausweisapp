@@ -1,0 +1,14 @@
+header:
+  version: 11
+  includes:
+    - kas-ausweisapp.yml
+machine: raspberrypi4-64
+distro: rpi-secure
+target:
+  - rpi-secure-ausweisapp-image
+local_conf_header:
+  raspberrypi: |
+    RPI_EXTRA_CONFIG:append = "\ndisplay_rotate=2"
+    RPI_SECURITY_PROFILE = "dev"
+    DISABLE_VC4GRAPHICS = "1"
+    CMDLINE:append = " vt.global_cursor_default=0 consoleblank=0"
