@@ -1,9 +1,8 @@
 DESCRIPTION = "RPi Secure AusweisApp Demo Image"
 
-inherit core-image
+COMPATIBLE_MACHINE = "^raspberrypi.*"
 
-# Pull in the RPi secure base only when building for a Raspberry Pi machine
-require ${@bb.utils.contains('MACHINEOVERRIDES', 'rpi', 'recipes-core/images/rpi-secure-image-base.bb', '', d)}
+require recipes-core/images/rpi-secure-image-base.bb
 
 IMAGE_INSTALL += "\
     ausweisapp \
