@@ -13,7 +13,6 @@ inherit qt6-cmake systemd
 SRC_URI = "git://git@github.com/Governikus/AusweisApp.git;protocol=ssh;branch=community \
            file://0001-disable-host-tests.patch \
            file://0002-disable-man-page-install.patch \
-           file://0003-confidential-display-of-personal-data.patch \
            file://AusweisApp2.conf \
            file://AusweisApp2-sim.conf \
            file://ausweisapp.service \
