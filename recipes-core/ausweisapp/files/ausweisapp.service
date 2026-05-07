@@ -5,7 +5,7 @@ DefaultDependencies=no
 
 [Service]
 DynamicUser=yes
-SupplementaryGroups=ausweisapp video input
+SupplementaryGroups=ausweisapp pcscd video input
 BindPaths=/var/ausweisapp:/var/lib/ausweisapp
 ReadWritePaths=/var/ausweisapp
 StateDirectory=ausweisapp
