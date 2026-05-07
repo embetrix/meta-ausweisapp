@@ -1,4 +1,4 @@
-DESCRIPTION = "AusweisApp Demo Image"
+DESCRIPTION = "RPi Secure AusweisApp Demo Image"
 
 inherit core-image
 
