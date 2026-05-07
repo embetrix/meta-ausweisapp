@@ -37,14 +37,6 @@ repos:
     url: "https://github.com/embetrix/meta-stm32mp15x.git"
     branch: scarthgap
     path: "layers/meta-stm32mp15x"
-  meta-raspberrypi:
-    url: "https://git.yoctoproject.org/git/meta-raspberrypi.git"
-    branch: scarthgap
-    path: "layers/meta-raspberrypi"
-  meta-raspberrypi-secure:
-    url: "https://github.com/embetrix/meta-raspberrypi-secure.git"
-    branch: scarthgap
-    path: "layers/meta-raspberrypi-secure"
   meta-security:
     url: https://git.yoctoproject.org/meta-security
     branch: scarthgap
@@ -68,3 +60,4 @@ local_conf_header:
     DISTRO_FEATURES:append = " systemd"
     DISTRO_FEATURES:remove=" wayland vulkan x11 ptest"
     INIT_MANAGER = "systemd"
+    BB_DANGLINGAPPENDS_WARNONLY = "1"
