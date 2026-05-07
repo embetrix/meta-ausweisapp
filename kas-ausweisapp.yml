@@ -33,23 +33,38 @@ repos:
     url: "git://code.qt.io/yocto/meta-qt6.git"
     branch: 6.9.3
     path: "layers/meta-qt6"
-  meta-raspberrypi:
-    url: "https://git.yoctoproject.org/git/meta-raspberrypi.git"
-    branch: scarthgap
-    path: "layers/meta-raspberrypi"
   meta-stm32mp15x:
     url: "https://github.com/embetrix/meta-stm32mp15x.git"
     branch: scarthgap
     path: "layers/meta-stm32mp15x"
+  meta-raspberrypi:
+    url: "https://git.yoctoproject.org/git/meta-raspberrypi.git"
+    branch: scarthgap
+    path: "layers/meta-raspberrypi"
+  meta-raspberrypi-secure:
+    url: "https://github.com/embetrix/meta-raspberrypi-secure.git"
+    branch: scarthgap
+    path: "layers/meta-raspberrypi-secure"
+  meta-security:
+    url: https://git.yoctoproject.org/meta-security
+    branch: scarthgap
+    path: "layers/meta-security"
+    layers:
+      .:
+      meta-integrity:
+      meta-tpm:
+  meta-selinux:
+    url: "https://git.yoctoproject.org/git/meta-selinux.git"
+    branch: scarthgap
+    path: "layers/meta-selinux"
+  meta-avb:
+    url: "https://github.com/embetrix/meta-avb.git"
+    branch: scarthgap
+    path: "layers/meta-avb"
 local_conf_header:
   standard: |
     CONF_VERSION = "2"
     INHERIT += "rm_work"
-    PACKAGE_CLASSES = "package_deb"
-    DISTRO_FEATURES += "systemd usrmerge wifi"
-    VIRTUAL-RUNTIME_init_manager = "systemd"
-    DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
-  debug-tweaks: |
-    EXTRA_IMAGE_FEATURES = "debug-tweaks"
-  license_flags: |
-    LICENSE_FLAGS_ACCEPTED += "synaptics-killswitch"
+    DISTRO_FEATURES:append = " systemd"
+    DISTRO_FEATURES:remove=" wayland vulkan x11 ptest"
+    INIT_MANAGER = "systemd"
