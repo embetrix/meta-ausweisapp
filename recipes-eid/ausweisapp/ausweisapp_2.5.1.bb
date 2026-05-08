@@ -1,10 +1,10 @@
 DESCRIPTION = "Der offizielle eID-Client des Bundes."
 LICENSE = "EUPL-1.2"
 
-LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=33583adf69edfcbf993ce6236ffe120a"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=73c58ffb950091efba36039f56d8f3b0"
 
 DEPENDS  = "qtdeclarative qttools-native doxygen-native"
-DEPENDS += "qtbase qtscxml qtwebsockets qtconnectivity qtsvg qtlanguageserver opensc openssl"
+DEPENDS += "qtbase qtscxml qtwebsockets qtconnectivity qtsvg qtlanguageserver opensc openssl llhttp"
 
 RDEPENDS:${PN} += " cantarell-fonts qtsvg"
 
@@ -19,8 +19,8 @@ SRC_URI = "git://git@github.com/Governikus/AusweisApp.git;protocol=ssh;branch=co
            file://ausweisapp.env \
           " 
 
-# TAG v2.4.0
-SRCREV = "52e0547f544da99019edfdb1bdd99a78393bf087"
+# TAG v2.5.1
+SRCREV = "ec80d3ab326b5c1d33f3288014b0d73d090c1061"
 
 S = "${WORKDIR}/git"
 
