@@ -1,6 +1,6 @@
-From a1bc08c915521ccb5dd5b51039ef0ca868046f54 Mon Sep 17 00:00:00 2001
+From fc978b48caf4d839d4e10e7ffa47cecaf783c477 Mon Sep 17 00:00:00 2001
 From: Ayoub Zaki <ayoub.zaki@embetrix.com>
-Date: Mon, 17 Nov 2025 17:21:43 +0100
+Date: Fri, 8 May 2026 15:18:48 +0200
 Subject: [PATCH] confidential display of personal data
 
 Signed-off-by: Ayoub Zaki <ayoub.zaki@embetrix.com>
@@ -9,46 +9,46 @@ Signed-off-by: Ayoub Zaki <ayoub.zaki@embetrix.com>
  1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/src/workflows/selfauth/SelfAuthenticationData.cpp b/src/workflows/selfauth/SelfAuthenticationData.cpp
-index 5bd808dc..0f305cfd 100644
+index 2493efe3..a4d80677 100644
 --- a/src/workflows/selfauth/SelfAuthenticationData.cpp
 +++ b/src/workflows/selfauth/SelfAuthenticationData.cpp
 @@ -227,17 +227,17 @@ void SelfAuthenticationData::SelfData::addAddress(OrderedSelfData& pSelfData) co
  	if (!getValue(SelfAuthData::PlaceOfResidenceNoPlaceInfo).isNull())
  	{
- 		//: LABEL ALL_PLATFORMS
+ 		//: ALL_PLATFORMS
 -		add(pSelfData, tr("Address"), getValue(SelfAuthData::PlaceOfResidenceNoPlaceInfo));
 +		add(pSelfData, tr("Address"), QStringLiteral("xxxxxxxxx"));
  	}
  	if (!getValue(SelfAuthData::PlaceOfResidenceStreet).isNull())
  	{
- 		//: LABEL ALL_PLATFORMS
+ 		//: ALL_PLATFORMS
 -		add(pSelfData, getValue(SelfAuthData::PlaceOfResidenceNoPlaceInfo).isNull() ? tr("Address") : QString(), getValue(SelfAuthData::PlaceOfResidenceStreet));
 +		add(pSelfData, getValue(SelfAuthData::PlaceOfResidenceNoPlaceInfo).isNull() ? tr("Address") : QString(), QStringLiteral("xxxxxxx"));
  	}
  	if (!getValue(SelfAuthData::PlaceOfResidenceZipCode).isNull() || !getValue(SelfAuthData::PlaceOfResidenceCity).isNull())
  	{
- 		//: LABEL ALL_PLATFORMS
+ 		//: ALL_PLATFORMS
 -		add(pSelfData, getValue(SelfAuthData::PlaceOfResidenceStreet).isNull() ? tr("Address") : QString(), getValue(SelfAuthData::PlaceOfResidenceZipCode) + ' '_L1 + getValue(SelfAuthData::PlaceOfResidenceCity));
 +		add(pSelfData, getValue(SelfAuthData::PlaceOfResidenceStreet).isNull() ? tr("Address") : QString(), QStringLiteral("xxxxxxx"));
  	}
  	if (!getValue(SelfAuthData::PlaceOfResidenceCountry).isNull())
  	{
 @@ -291,9 +291,9 @@ SelfAuthenticationData::OrderedSelfData SelfAuthenticationData::SelfData::getOrd
- 	//: LABEL ALL_PLATFORMS
+ 	//: ALL_PLATFORMS
  	add(orderedSelfData, tr("Doctoral degree"), getValue(SelfAuthData::AcademicTitle));
- 	//: LABEL ALL_PLATFORMS
+ 	//: ALL_PLATFORMS
 -	add(orderedSelfData, tr("Date of birth"), formatDate(getValue(SelfAuthData::DateOfBirth)));
 +	add(orderedSelfData, tr("Date of birth"), QStringLiteral("xx.xx.xxxx"));
- 	//: LABEL ALL_PLATFORMS
+ 	//: ALL_PLATFORMS
 -	add(orderedSelfData, tr("Place of birth"), getValue(SelfAuthData::PlaceOfBirth));
 +	add(orderedSelfData, tr("Place of birth"), QStringLiteral("xxxxxxxxx"));
  	addAddress(orderedSelfData);
- 	//: LABEL ALL_PLATFORMS
+ 	//: ALL_PLATFORMS
  	add(orderedSelfData, tr("Document type"), getValue(SelfAuthData::DocumentType));
 @@ -319,7 +319,7 @@ SelfAuthenticationData::OrderedSelfData SelfAuthenticationData::SelfData::getOrd
  	}
  
- 	//: LABEL ALL_PLATFORMS
+ 	//: ALL_PLATFORMS
 -	add(orderedSelfData, tr("Valid until"), formatDate(getValue(SelfAuthData::DateOfExpiry)));
 +	add(orderedSelfData, tr("Valid until"), QStringLiteral("xx.xx.xxxx"));
  
@@ -56,4 +56,3 @@ index 5bd808dc..0f305cfd 100644
  }
 -- 
 2.43.0
-
