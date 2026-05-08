@@ -4,6 +4,9 @@ Yocto/Openembedded layer for the German eID client AusweisApp:
 
 https://www.ausweisapp.bund.de
 
+## Overview
+
+![AusweisApp overview](images/ausweisapp-overview.svg)
 
 ## Build
 
