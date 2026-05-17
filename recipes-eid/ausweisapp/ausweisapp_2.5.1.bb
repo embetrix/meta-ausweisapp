@@ -22,8 +22,6 @@ SRC_URI = "git://git@github.com/Governikus/AusweisApp.git;protocol=ssh;branch=co
 # TAG v2.5.1
 SRCREV = "ec80d3ab326b5c1d33f3288014b0d73d090c1061"
 
-S = "${WORKDIR}/git"
-
 EXTRA_OECMAKE += "-DBUILD_TESTING=OFF -DQT_DEBUG_FIND_PACKAGE=ON"
 
 SYSTEMD_SERVICE:${PN} = "ausweisapp.service"
@@ -38,12 +36,12 @@ USERADD_PARAM:${PN}  = "--system --no-create-home -g ausweisapp -s /bin/false au
 do_install:append() {
 
 	install -d ${D}${sysconfdir}/AusweisApp
-	install -m 0644 ${WORKDIR}/AusweisApp2.conf ${D}${sysconfdir}/AusweisApp/
-    install -m 0644 ${WORKDIR}/AusweisApp2-sim.conf ${D}${sysconfdir}/AusweisApp/
-	install -m 0644 ${WORKDIR}/ausweisapp.env  ${D}${sysconfdir}/AusweisApp/
+	install -m 0644 ${UNPACKDIR}/AusweisApp2.conf ${D}${sysconfdir}/AusweisApp/
+    install -m 0644 ${UNPACKDIR}/AusweisApp2-sim.conf ${D}${sysconfdir}/AusweisApp/
+	install -m 0644 ${UNPACKDIR}/ausweisapp.env  ${D}${sysconfdir}/AusweisApp/
 
 	install -d ${D}${systemd_unitdir}/system
-	install -m 0644 ${WORKDIR}/ausweisapp.service ${D}${systemd_unitdir}/system/
+	install -m 0644 ${UNPACKDIR}/ausweisapp.service ${D}${systemd_unitdir}/system/
 
     install -d -m 0750 -o ausweisapp -g ausweisapp ${D}${localstatedir}/ausweisapp
 }

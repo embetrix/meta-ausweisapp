@@ -3,6 +3,7 @@ From: Ayoub Zaki <ayoub.zaki@embetrix.com>
 Date: Mon, 4 Aug 2025 12:36:33 +0200
 Subject: [PATCH] disable host tests
 
+Upstream-Status: Inappropriate [OE specific]
 Signed-off-by: Ayoub Zaki <ayoub.zaki@embetrix.com>
 ---
  cmake/Libraries.cmake | 9 ---------

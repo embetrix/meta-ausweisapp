@@ -9,7 +9,7 @@ GROUPADD_PARAM:${PN} = "--system pcscd"
 
 do_install:append() {
     install -d ${D}${systemd_unitdir}/system/pcscd.socket.d
-    install -m 0644 ${WORKDIR}/pcscd-hardening.conf \
+    install -m 0644 ${UNPACKDIR}/pcscd-hardening.conf \
         ${D}${systemd_unitdir}/system/pcscd.socket.d/pcscd-hardening.conf
 }
 

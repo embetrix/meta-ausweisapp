@@ -2,11 +2,15 @@ pipeline {
     agent { dockerfile true }
 
     parameters {
-        gitParameter branchFilter: 'origin/(.*)', defaultValue: 'scarthgap', selectedValue: 'DEFAULT', name: 'BRANCH', type: 'PT_BRANCH', description: 'branch to build'
+        gitParameter branchFilter: 'origin/(.*)', defaultValue: 'wrynose', selectedValue: 'DEFAULT', name: 'BRANCH', type: 'PT_BRANCH', description: 'branch to build'
         choice choices: ['qemux86-64', 'stm32mp157f-dk2', 'raspberrypi5', 'raspberrypi4-64', 'beaglebone-yocto'], description: 'select machine', name: 'MACHINE'
         choice choices: ['ausweisapp-image'], description: 'select image', name: 'IMAGE'
         choice choices: ['no', 'yes'], description: 'clean workspace', name: 'CLEAN'
         choice choices: ['no', 'yes'], description: 'build sdk', name: 'SDK'
+    }
+
+    environment {
+        KAS_CLONE_DEPTH = "1"
     }
 
     stages {
