@@ -13,10 +13,6 @@ pipeline {
         SECURITY_PROFILE = "${params.SECURITY_PROFILE}"
     }
 
-    environment {
-        KAS_CLONE_DEPTH = "1"
-    }
-
     stages {
  
         stage('Clean') {
