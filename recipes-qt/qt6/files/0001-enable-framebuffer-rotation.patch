@@ -3,6 +3,7 @@ From: Ayoub Zaki <ayoub.zaki@embetrix.com>
 Date: Wed, 19 Nov 2025 14:21:12 +0100
 Subject: [PATCH] enable framebuffer rotation
 
+Upstream-Status: Inappropriate
 Signed-off-by: Ayoub Zaki <ayoub.zaki@embetrix.com>
 ---
  .../platforms/linuxfb/qlinuxfbscreen.cpp      | 36 ++++++++++++++++---

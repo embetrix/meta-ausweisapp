@@ -6,15 +6,6 @@ machine: raspberrypi4-64
 distro: rpi-secure
 target:
   - rpi-secure-ausweisapp-image
-repos:
-  meta-raspberrypi:
-    url: "https://git.yoctoproject.org/git/meta-raspberrypi.git"
-    branch: scarthgap
-    path: "layers/meta-raspberrypi"
-  meta-raspberrypi-secure:
-    url: "https://github.com/embetrix/meta-raspberrypi-secure.git"
-    branch: scarthgap
-    path: "layers/meta-raspberrypi-secure"
 local_conf_header:
   raspberrypi: |
     RPI_EXTRA_CONFIG:append = "\ndisplay_rotate=2"
