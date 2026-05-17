@@ -3,6 +3,7 @@ From: Ayoub Zaki <ayoub.zaki@embetrix.com>
 Date: Fri, 8 May 2026 15:18:48 +0200
 Subject: [PATCH] confidential display of personal data
 
+Upstream-Status: Inappropriate [OE specific]
 Signed-off-by: Ayoub Zaki <ayoub.zaki@embetrix.com>
 ---
  src/workflows/selfauth/SelfAuthenticationData.cpp | 12 ++++++------
