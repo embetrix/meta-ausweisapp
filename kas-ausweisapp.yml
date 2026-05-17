@@ -9,19 +9,19 @@ repos:
   # It's current revision will be used to perform the build.
   meta-ausweisapp:
   openembedded-core:
-    url: https://git.openembedded.org/openembedded-core.git
+    url: https://github.com/openembedded/openembedded-core.git
     branch: wrynose
     path: "layers/openembedded-core"
     layers:
       meta:
   bitbake:
-    url: https://git.openembedded.org/bitbake.git
+    url: https://github.com/openembedded/bitbake.git
     branch: "2.18"
     path: "layers/bitbake"
     layers:
       bitbake: disabled
   meta-yocto:
-    url: https://git.yoctoproject.org/meta-yocto.git
+    url: https://github.com/yoctoproject/meta-yocto.git
     branch: wrynose
     path: "layers/meta-yocto"
     layers:
