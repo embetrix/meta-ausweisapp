@@ -68,6 +68,10 @@ repos:
     url: "https://github.com/embetrix/meta-raspberrypi-secure.git"
     branch: wrynose
     path: "layers/meta-raspberrypi-secure"
+  meta-swupdate:
+    url: "https://github.com/sbabic/meta-swupdate.git"
+    branch: wrynose
+    path: "layers/meta-swupdate"
 local_conf_header:
   standard: |
     CONF_VERSION = "2"

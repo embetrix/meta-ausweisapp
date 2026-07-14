@@ -1,14 +1,20 @@
 header:
-  version: 11
+  version: 14
   includes:
     - kas-ausweisapp.yml
-machine: raspberrypi4-64
+machine: raspberrypi5
 distro: rpi-secure
 target:
   - rpi-secure-ausweisapp-image
 local_conf_header:
   raspberrypi: |
-    RPI_EXTRA_CONFIG:append = "\ndisplay_rotate=2"
+    RPI_EXTRA_CONFIG:append = "\ndtoverlay=vc4-kms-dsi-ili9881-7inch"
     RPI_SECURITY_PROFILE = "dev"
     DISABLE_VC4GRAPHICS = "1"
     CMDLINE:append = " vt.global_cursor_default=0 consoleblank=0"
+    RPI_SECURE_VERSION_PATH = "${LAYERDIR}"
+    RPI_KERNEL_DEVICETREE_OVERLAYS:append = " overlays/rpi-backlight.dtbo"
+  swupdate: |
+    SWUPDATE_CMS_CERT = "${RPI_SIGNING_KEYS_DIR}/x509_swupdate.pem ${RPI_SIGNING_KEYS_DIR}/x509_swupdate_mldsa44.pem"
+    SWUPDATE_CMS_KEY  = "${RPI_SIGNING_KEYS_DIR}/privkey_swupdate.pem ${RPI_SIGNING_KEYS_DIR}/privkey_swupdate_mldsa44.pem"
+    SWUPDATE_CMS_MD   = "sha256"
