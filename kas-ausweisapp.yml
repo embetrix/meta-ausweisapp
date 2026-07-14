@@ -62,7 +62,7 @@ repos:
     path: "layers/meta-avb"
   meta-raspberrypi:
     url: "https://git.yoctoproject.org/git/meta-raspberrypi.git"
-    branch: master
+    branch: wrynose
     path: "layers/meta-raspberrypi"
   meta-raspberrypi-secure:
     url: "https://github.com/embetrix/meta-raspberrypi-secure.git"
@@ -73,5 +73,5 @@ local_conf_header:
     CONF_VERSION = "2"
     INHERIT += "rm_work"
     DISTRO_FEATURES:append = " systemd security integrity selinux tpm2"
-    DISTRO_FEATURES:remove = " wayland vulkan x11 ptest"
-    INIT_MANAGER = "systemd"
+    DISTRO_FEATURES_OPTED_OUT:append = " alsa bluetooth debuginfod nfs pci 3g nfc pulseaudio opengl wayland vulkan x11 ptest"
+
