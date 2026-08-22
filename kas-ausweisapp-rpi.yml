@@ -12,7 +12,7 @@ local_conf_header:
     RPI_SECURITY_PROFILE = "dev"
     DISABLE_VC4GRAPHICS = "1"
     CMDLINE:append = " vt.global_cursor_default=0 consoleblank=0"
-    RPI_SECURE_VERSION_PATH = "${LAYERDIR}"
+    RPI_SECURE_VERSION_PATH = "${AUSWEISAPP_BASE}"
     RPI_KERNEL_DEVICETREE_OVERLAYS:append = " overlays/rpi-backlight.dtbo"
   swupdate: |
     SWUPDATE_CMS_CERT = "${RPI_SIGNING_KEYS_DIR}/x509_swupdate.pem ${RPI_SIGNING_KEYS_DIR}/x509_swupdate_mldsa44.pem"
