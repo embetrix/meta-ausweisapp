@@ -6,6 +6,7 @@ machine: raspberrypi5
 distro: rpi-secure
 target:
   - rpi-secure-ausweisapp-image
+  - rpi-secure-ausweisapp-image-update
 local_conf_header:
   raspberrypi: |
     RPI_EXTRA_CONFIG:append = "\ndtoverlay=vc4-kms-dsi-ili9881-7inch"
