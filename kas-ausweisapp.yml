@@ -72,6 +72,10 @@ repos:
     url: "https://github.com/sbabic/meta-swupdate.git"
     branch: wrynose
     path: "layers/meta-swupdate"
+  meta-sca:
+    url: "https://github.com/priv-kweihmann/meta-sca.git"
+    branch: wrynose
+    path: "layers/meta-sca"
 local_conf_header:
   standard: |
     CONF_VERSION = "2"
