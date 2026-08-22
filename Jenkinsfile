@@ -10,7 +10,9 @@ pipeline {
 
     environment {
         KAS_CLONE_DEPTH = "1"
+        SSH_PRIVATE_KEY_FILE  = credentials('SSH_PRIVATE_KEY_FILE')
         SECURITY_PROFILE = "${params.SECURITY_PROFILE}"
+        HOME = "${env.WORKSPACE}"
     }
 
     stages {
@@ -35,6 +37,7 @@ pipeline {
                     withCredentials([file(credentialsId: 'fd6cfa4d-679d-4d04-9e6a-74073de43385', variable: 'KEYS_TARBALL')]) {
                         sh "tar xzf \$KEYS_TARBALL -C ${env.WORKSPACE}"
                     }
+                    sh "kas checkout --update kas-ausweisapp-rpi.yml"
                     sh "layers/meta-raspberrypi-secure/tools/genkey-helper.sh ${keyDir} ${kasFragment}"
                 }
             }
